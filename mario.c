@@ -10,7 +10,7 @@ int main(void){
      do{
         flag = 1;
         printf("Height: ");
-        fgets(s, 333, stdin);
+        fgets(s, 3, stdin);
         s[slen(s)-1] = '\0';
         if(isnum(s)){
             n = strtoint(s);
