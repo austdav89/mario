@@ -1,26 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "./libs/stringlib.c"
 
-#define MAX_CHARS 25
 
 int main(void){
-    char s[MAX_CHARS];
+    char *s = malloc(sizeof(char) * 3);
     int n;
-   
+    int flag;   
      do{
-        printf("Please enter height: ");
-        fgets(s,MAX_CHARS,stdin);
+        flag = 1;
+        printf("Height: ");
+        fgets(s, 333, stdin);
         s[slen(s)-1] = '\0';
-    }while(!isnum(s));
+        if(isnum(s)){
+            n = strtoint(s);
+            if(n > 0 && n < 9)
+                flag = 0;
+        }
+    }while(flag);
     
-    n = strtoint(s);
-    for(int i = 0; i < n; i++){
-        for(int j = n - 1; j > 0; j--){
+    for(int i = 1; i <= n; i++){
+        for(int j = n - i; j > 0; j--){
             printf(" ");
         }
-        for(int k = 1; k < n; k++){
+        for(int k = 0; k < i; k++){
             printf("#");
         }
+        printf("  ");
+        for(int k = 0; k < i; k++){
+            printf("#");
+        }
+
         printf("\n");
     }    
     return 0;

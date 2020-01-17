@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int slen(char *s){
     int c = 0;
 
@@ -23,6 +21,15 @@ int isnum(char *s){
 
 
 int strtoint(char *s){
+    int n = 0;
+    if(isnum(s)){
+        while(*s != '\0'){
+            n += (*s - '0');
+            n *= 10;
+            s++;
+        }
+        return n / 10;
+    }
     return 0;
 }
 
