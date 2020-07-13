@@ -11,7 +11,6 @@ int slen(char *s){
 int isnum(char *s){
     while(*s != '\0'){
         if (*s > '9' || *s < '0'){
-            printf("%c\n",*s);
             return 0;
         } 
         s++;   
