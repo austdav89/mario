@@ -1,7 +1,7 @@
 //This is customized header used for my own functions. This will mostly be for string checks and manipulation.
 
 //Checks to see if string consist of all digits. Returns 1 if number and returns 0 if not.
-int isNum(char *s);
+int isnum(char *s);
 
 //Quick and dirty string character counter
 int slen(char *s);
