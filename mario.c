@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./libs/stringlib.c"
+#include "./libs/stringlib.h"
 
 
 int main(void){
@@ -14,7 +14,7 @@ int main(void){
         s[slen(s)-1] = '\0';
         if(isnum(s)){
             n = strtoint(s);
-            if(n > 0 && n < 9)
+            if(n > 0 && n < 10)
                 flag = 0;
         }
     }while(flag);
